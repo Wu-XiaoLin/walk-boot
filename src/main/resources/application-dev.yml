@@ -1,0 +1,15 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+
+mybatis-plus:
+  global-config:
+    #刷新mapper 调试神器
+    refresh: true
+    #db-config:
+      #自定义填充策略接口实现
+      #meta-object-handler: com.baomidou.springboot.xxx
+  configuration:
+    #sql语句打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
