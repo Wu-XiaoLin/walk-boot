@@ -1,6 +1,7 @@
 package cn.wxingzou.walk.common.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -29,22 +30,26 @@ public class BaseEntity implements Serializable {
     /**
      * 创建人
      */
+    @JsonIgnore
     private Long createBy;
 
     /**
      * 创建时间
      */
-    private LocalDateTime createDate;
+    @JsonIgnore
+    private LocalDateTime createTime;
 
     /**
      * 修改人
      */
+    @JsonIgnore
     private Long updateBy;
 
     /**
      * 修改时间
      */
-    private LocalDateTime updateDate;
+    @JsonIgnore
+    private LocalDateTime updateTime;
 
 
     public <T> T convert(Class<T> clazz) {

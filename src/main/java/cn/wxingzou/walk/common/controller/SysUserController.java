@@ -2,10 +2,11 @@ package cn.wxingzou.walk.common.controller;
 
 
 import cn.wxingzou.walk.common.entity.SysUser;
-import cn.wxingzou.walk.common.service.impl.SysUserServiceImpl;
+import cn.wxingzou.walk.common.service.ISysUserService;
+import cn.wxingzou.walk.common.util.Result;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -15,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author wuxiaolin
  * @since 2019-08-06
  */
-@Controller
+@RestController
 @RequestMapping("${baseUrl}/common/user")
 @Slf4j
-public class SysUserController extends BaseController<SysUserServiceImpl, SysUser> {
-
+public class SysUserController extends BaseController<ISysUserService, SysUser> {
 
 }

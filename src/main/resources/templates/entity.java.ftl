@@ -33,6 +33,7 @@ import lombok.experimental.Accessors;
 <#if table.convert>
 @TableName("${table.name}")
 </#if>
+@ToString(callSuper = true)
 <#if swagger2>
 @ApiModel(value="${entity}对象", description="${table.comment!}")
 </#if>
@@ -57,9 +58,7 @@ public class ${entity} implements Serializable {
         <#if swagger2>
     @ApiModelProperty(value = "${field.comment}")
         <#else>
-    /**
-     * ${field.comment}
-     */
+
         </#if>
     </#if>
     <#if field.keyFlag>
@@ -90,7 +89,12 @@ public class ${entity} implements Serializable {
     <#if (logicDeleteFieldName!"") == field.name>
     @TableLogic
     </#if>
+    <#if ("createBy") != field.propertyName && ("createTime") != field.propertyName && ("updateBy") != field.propertyName && ("updateTime") != field.propertyName && ("enable") != field.propertyName  >
+    /**
+    * ${field.comment}
+    */
     private ${field.propertyType} ${field.propertyName};
+    </#if>
 </#list>
 <#------------  END 字段循环遍历  ---------->
 

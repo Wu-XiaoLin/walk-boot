@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @version 1.0
  * @date 2019-08-06 17:18
  **/
-@EnableTransactionManagement
 @Configuration
 @MapperScan("cn.wxingzou.walk.*.mapper*")
 public class MybatisPlusConfig {

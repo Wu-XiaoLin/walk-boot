@@ -19,10 +19,10 @@ spring:
     password: 2019Walk.
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-  # Êı¾İ¿âÁ¬½Ó³ØÅäÖÃ
+  # æ•°æ®åº“è¿æ¥æ± é…ç½®
   druid:
-    initial-size: 3 #³õÊ¼»¯Á¬½Ó³Ø´óĞ¡
-    max-active: 50 #×î´óÁ¬½ÓÊı
+    initial-size: 3 #åˆå§‹åŒ–è¿æ¥æ± å¤§å°
+    max-active: 50 #æœ€å¤§è¿æ¥æ•°
     min-idle: 1
     max-wait: 6000
     validation-query: select 'x'
@@ -31,39 +31,39 @@ spring:
     test-on-return: false
     test-while-idle: true
     stat-view-servlet:
-      # Ä¬ÈÏtrue ÄÚÖÃ¼à¿ØÒ³ÃæÊ×Ò³/druid/index.html
+      # é»˜è®¤true å†…ç½®ç›‘æ§é¡µé¢é¦–é¡µ/druid/index.html
       enabled: true
       url-pattern: /druid/*
-      # ÔÊĞíÇå¿ÕÍ³¼ÆÊı¾İ
+      # å…è®¸æ¸…ç©ºç»Ÿè®¡æ•°æ®
       reset-enable: true
       login-username: root
       login-password: ENC(F4B0s6u9xcDw3V+P0qC4CA==)
-      # IP°×Ãûµ¥ ¶à¸ö¶ººÅ·Ö¸ô
+      # IPç™½åå• å¤šä¸ªé€—å·åˆ†éš”
       allow:
-      # IPºÚÃûµ¥
+      # IPé»‘åå•
       deny:
   redis:
     host: 127.0.0.1
     password: 123456
-    # Êı¾İ¿âË÷Òı Ä¬ÈÏ0
+    # æ•°æ®åº“ç´¢å¼• é»˜è®¤0
     database: 0
     port: 6379
-    # ³¬Ê±Ê±¼ä DurationÀàĞÍ 3Ãë
+    # è¶…æ—¶æ—¶é—´ Durationç±»å‹ 3ç§’
     timeout: 3S
   jackson:
     time-zone: GMT+8
 
-# ÈÕÖ¾ÅäÖÃ
+# æ—¥å¿—é…ç½®
 logging:
-  # Êä³ö¼¶±ğ
+  # è¾“å‡ºçº§åˆ«
   level:
     root: info
-  # Ö¸¶¨Â·¾¶
+  # æŒ‡å®šè·¯å¾„
   path: logs
   file:
-    # ×î´ó±£´æÌìÊı
+    # æœ€å¤§ä¿å­˜å¤©æ•°
     max-history: 7
-    # Ã¿¸öÎÄ¼ş×î´ó´óĞ¡
+    # æ¯ä¸ªæ–‡ä»¶æœ€å¤§å¤§å°
     max-size: 10MB
 
 # mybatis-plus

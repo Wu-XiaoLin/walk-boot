@@ -53,7 +53,7 @@ public class MysqlGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/mybatis-plus-sample-generator/src/main/java");
+        gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("wuxiaolin");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
@@ -99,7 +99,7 @@ public class MysqlGenerator {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setSuperEntityClass("cn.wxingzou.walk.common.entity.BaseEntity");
         strategy.setEntityLombokModel(true);
-//        strategy.setSuperControllerClass("com.baomidou.mybatisplus.samples.generator.common.BaseController");
+        strategy.setSuperControllerClass("cn.wxingzou.walk.common.controller.BaseController");
         strategy.setInclude(scanner("表名"));
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
