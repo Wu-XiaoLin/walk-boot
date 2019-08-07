@@ -2,6 +2,7 @@ package cn.wxingzou.walk.common.util;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 import java.util.Objects;
 
@@ -14,17 +15,22 @@ import java.util.Objects;
  **/
 @ToString
 @Data
+@Accessors(chain = true)
 public class Result {
 
     private int code = 200;//错误代码
     private String msg = "操作成功";// 提示信息
     private Object data = null;
 
+    public Result() {
+
+    }
 
     public Result(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
+
 
     public Result(Object data) {
         this.data = data;
@@ -50,6 +56,10 @@ public class Result {
         return new Result(data);
     }
 
+
+    public static Result success() {
+        return new Result();
+    }
 
 }
 
